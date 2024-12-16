@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.svoldgaard.mealplan.GUI.Controller.MealPlanController">
+    <Button layoutX="15.0" layoutY="496.0" mnemonicParsing="false" onAction="#btnAddInventory" prefHeight="26.0" prefWidth="120.0" text="Add inventory" />
+    <Button layoutX="230.0" layoutY="504.0" mnemonicParsing="false" onAction="#btnCreateNewMeal" prefHeight="26.0" prefWidth="114.0" text="Create new meal" />
+    <Button layoutX="640.0" layoutY="9.0" mnemonicParsing="false" onAction="#btnClearMealPlan" text="Clear meal plan" />
+    <Text layoutX="50.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monday" AnchorPane.bottomAnchor="553.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="665.4013671875" AnchorPane.topAnchor="35.0" />
+    <Text layoutX="150.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tuesday" AnchorPane.bottomAnchor="553.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="562.84326171875" AnchorPane.topAnchor="35.0" />
+    <Text layoutX="245.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wednesday" AnchorPane.bottomAnchor="553.0" AnchorPane.leftAnchor="245.0" AnchorPane.rightAnchor="449.5302734375" AnchorPane.topAnchor="35.0" />
+    <Text layoutX="355.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thursday" AnchorPane.bottomAnchor="553.0" AnchorPane.leftAnchor="355.0" AnchorPane.rightAnchor="353.48876953125" AnchorPane.topAnchor="35.0" />
+    <Text layoutX="467.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Friday" AnchorPane.bottomAnchor="553.0" AnchorPane.leftAnchor="467.0" AnchorPane.rightAnchor="259.408203125" AnchorPane.topAnchor="35.0" />
+    <Text layoutX="563.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saturday" AnchorPane.bottomAnchor="553.0" AnchorPane.leftAnchor="563.0" AnchorPane.rightAnchor="147.9453125" AnchorPane.topAnchor="35.0" />
+    <Text layoutX="659.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunday" AnchorPane.bottomAnchor="553.0" AnchorPane.leftAnchor="659.0" AnchorPane.rightAnchor="59.54345703125" AnchorPane.topAnchor="35.0" />
+    <Button layoutX="690.0" layoutY="553.0" mnemonicParsing="false" onAction="#btnClose" text="Close" />
+    <Button layoutX="438.0" layoutY="553.0" mnemonicParsing="false" onAction="#btnCreateShoppingList" text="Create shopping list" />
+    <TableView fx:id="InventoryTable" layoutX="14.0" layoutY="203.0" prefHeight="293.0" prefWidth="200.0">
+      <columns>
+          <TableColumn prefWidth="125.0" text="Item" />
+          <TableColumn prefWidth="75.0" text="Qty" />
+      </columns>
+    </TableView>
+    <Text layoutX="89.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory" />
+    <ListView fx:id="lstMeal" layoutX="230.0" layoutY="203.0" prefHeight="293.0" prefWidth="200.0" />
+    <Text layoutX="306.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meal list" />
+    <Button layoutX="566.0" layoutY="553.0" mnemonicParsing="false" onAction="#btnClearShoppingList" text="Clear shipping list" />
+    <TableView fx:id="GroceryTable" layoutX="446.0" layoutY="203.0" prefHeight="293.0" prefWidth="300.0">
+      <columns>
+          <TableColumn prefWidth="150.0" text="Item" />
+          <TableColumn prefWidth="75.0" text="Qty" />
+          <TableColumn prefWidth="75.0" text="Price" />
+      </columns>
+    </TableView>
+    <ListView fx:id="lstMondayMeal" layoutX="22.0" layoutY="52.0" prefHeight="100.0" prefWidth="100.0" />
+    <ListView fx:id="lstTuesdayMeal" layoutX="124.0" layoutY="52.0" prefHeight="100.0" prefWidth="100.0" />
+    <ListView fx:id="lstWednesdayMeal" layoutX="228.0" layoutY="52.0" prefHeight="100.0" prefWidth="100.0" />
+    <ListView fx:id="lstThursdayMeal" layoutX="331.0" layoutY="52.0" prefHeight="100.0" prefWidth="100.0" />
+    <ListView fx:id="lstFridayMeal" layoutX="434.0" layoutY="52.0" prefHeight="100.0" prefWidth="100.0" />
+    <ListView fx:id="lstSaturdayMeal" layoutX="538.0" layoutY="52.0" prefHeight="100.0" prefWidth="100.0" />
+    <ListView fx:id="lstSundayMeal" layoutX="640.0" layoutY="52.0" prefHeight="100.0" prefWidth="100.0" />
+    <Text layoutX="552.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shopping list" />
+   <TextField fx:id="txtSearchInventory" alignment="CENTER" layoutX="34.0" layoutY="160.0" promptText="Search Inventory" />
+   <TextField fx:id="txtSearchMeal" alignment="CENTER" layoutX="248.0" layoutY="160.0" promptText="Search Meal" />
+   <TextField fx:id="txtSearchShoppingList" alignment="CENTER" layoutX="507.0" layoutY="160.0" promptText="Search Shopping List" />
+   <Button layoutX="446.0" layoutY="504.0" mnemonicParsing="false" onAction="#btnAddItem" text="Add Item" />
+   <Button layoutX="525.0" layoutY="504.0" mnemonicParsing="false" onAction="#btnDeleteItem" text="Delete Item" />
+   <Text layoutX="628.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total price:" />
+   <Text fx:id="txtTotalPrice" layoutX="691.0" layoutY="522.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+   <Button layoutX="230.0" layoutY="530.0" mnemonicParsing="false" onAction="#btnEditMeal" text="Edit meal " />
+   <Button layoutX="15.0" layoutY="525.0" mnemonicParsing="false" onAction="#btnEditInventory" text="Edit item in inventory" />
+   <Button layoutX="15.0" layoutY="553.0" mnemonicParsing="false" onAction="#btnDeleteItemInInventory" text="Delete Item in Inventory" />
+   <Button layoutX="230.0" layoutY="556.0" mnemonicParsing="false" onAction="#btnDeleteMeal" text="Delete Meal" />
+</AnchorPane>

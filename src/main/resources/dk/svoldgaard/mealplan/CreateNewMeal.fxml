@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.svoldgaard.mealplan.GUI.Controller.CreateNewMealController">
+   <children>
+      <TextField fx:id="txtMealName" layoutX="32.0" layoutY="75.0" promptText="Meal Name" />
+      <Button layoutX="204.0" layoutY="112.0" mnemonicParsing="false" onAction="#btnAddIngredient" text="Add Ingredient" />
+      <TextField fx:id="txtAddIngredient" layoutX="32.0" layoutY="113.0" promptText="Add Ingredient" />
+      <Button layoutX="32.0" layoutY="272.0" mnemonicParsing="false" onAction="#btnSave" prefHeight="26.0" prefWidth="98.0" text="Save" />
+      <Button layoutX="130.0" layoutY="272.0" mnemonicParsing="false" onAction="#btnCancel" prefHeight="26.0" prefWidth="98.0" text="Cancel" />
+      <TableView fx:id="TableAddIngredient" layoutX="308.0" layoutY="39.0" prefHeight="300.0" prefWidth="225.0">
+        <columns>
+          <TableColumn prefWidth="150.0" text="Item" />
+          <TableColumn prefWidth="75.0" text="Qty" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtAddQuantity" layoutX="32.0" layoutY="147.0" promptText="Add Quantity in ML/G" />
+   </children>
+</AnchorPane>

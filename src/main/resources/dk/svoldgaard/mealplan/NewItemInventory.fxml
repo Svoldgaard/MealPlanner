@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.svoldgaard.mealplan.GUI.Controller.InventoryController">
+    <TextField fx:id="txtName" layoutX="20.0" layoutY="44.0" promptText="Item name" />
+    <TextField fx:id="txtQuantity" layoutX="20.0" layoutY="75.0" promptText="Item Qty in ML/G" />
+    <Button layoutX="20.0" layoutY="138.0" mnemonicParsing="false" onAction="#btnSave" text="Save" />
+    <Button layoutX="125.0" layoutY="139.0" mnemonicParsing="false" onAction="#btnCancel" text="Cancel" />
+</AnchorPane>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.svoldgaard.mealplan.GUI.Controller.AddItemShoppinglistController">
+   <children>
+      <Button layoutX="20.0" layoutY="153.0" mnemonicParsing="false" onAction="#btnSave" text="Save" />
+      <Button layoutX="126.0" layoutY="153.0" mnemonicParsing="false" onAction="#btnCancel" text="Cancel" />
+      <TextField fx:id="txtItemName" layoutX="20.0" layoutY="40.0" promptText="Item Name" />
+      <TextField fx:id="txtQty" layoutX="20.0" layoutY="76.0" promptText="Item Qty in ML/G" />
+      <TextField fx:id="txtPrice" layoutX="20.0" layoutY="109.0" promptText="Price" />
+   </children>
+</AnchorPane>
