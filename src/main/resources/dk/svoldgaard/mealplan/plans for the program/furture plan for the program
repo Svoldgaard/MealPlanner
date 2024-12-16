@@ -1,0 +1,14 @@
+program plans
+
+the program must be abel to select a meal in the meal view and then add it via a drag and drop option to each week day with out
+removing it from the list off meals (or remove then but return when weekdays list is cleared)
+
+each meal must contain the ingrediens for the meals so it can be added to the shopping list when it is created so it can be printed and
+used when going out for shopping in for the meals.
+
+there is also an inventory tabelview where is should be able to add the ingredients you have in your house hold
+item should be taken from here to the shopping list so you dont buy the grosserys you all ready have in the house.
+
+i have made buttons so it is both possible to add extra item to the shopping list and also to the inventory if you buy something ekstra
+you need for the house.
+

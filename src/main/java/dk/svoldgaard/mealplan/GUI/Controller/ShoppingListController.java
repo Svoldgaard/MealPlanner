@@ -5,7 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class AddItemShoppinglistController {
+public class ShoppingListController {
 
     public TextField txtItemName;
     public TextField txtQty;

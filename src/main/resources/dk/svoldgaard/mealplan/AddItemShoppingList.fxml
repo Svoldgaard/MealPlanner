@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.svoldgaard.mealplan.GUI.Controller.AddItemShoppinglistController">
+<AnchorPane prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.svoldgaard.mealplan.GUI.Controller.ShoppingListController">
    <children>
       <Button layoutX="20.0" layoutY="153.0" mnemonicParsing="false" onAction="#btnSave" text="Save" />
       <Button layoutX="126.0" layoutY="153.0" mnemonicParsing="false" onAction="#btnCancel" text="Cancel" />

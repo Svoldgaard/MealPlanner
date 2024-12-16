@@ -1,7 +1,6 @@
 package dk.svoldgaard.mealplan.GUI.Controller;
 
 import dk.svoldgaard.mealplan.BE.Meal;
-import dk.svoldgaard.mealplan.BLL.MealManager;
 import dk.svoldgaard.mealplan.GUI.Model.MealPlanModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class CreateNewMealController {
+public class NewMealController {
 
 
     @FXML
@@ -31,7 +30,7 @@ public class CreateNewMealController {
     private MealPlanController parentController;
     private MealPlanModel mealPlanModel;
 
-    public CreateNewMealController() {
+    public NewMealController() {
     }
 
     public void setMealPlanModel(MealPlanModel mealPlanModel) {

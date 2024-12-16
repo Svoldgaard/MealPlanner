@@ -1,11 +1,9 @@
 package dk.svoldgaard.mealplan.GUI.Controller;
 
 import dk.svoldgaard.mealplan.BE.Meal;
-import dk.svoldgaard.mealplan.BLL.MealManager;
 import dk.svoldgaard.mealplan.GUI.Model.MealPlanModel;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +15,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -109,7 +106,7 @@ public class MealPlanController implements Initializable {
         Parent scene = loader.load();
 
         // Get the controller from the loader
-        CreateNewMealController controller = loader.getController();
+        NewMealController controller = loader.getController();
 
         // Set the MealPlanModel in the controller
         controller.setMealPlanModel(mealPlanModel);  // Assuming 'mealPlanModel' is available
@@ -144,7 +141,7 @@ public class MealPlanController implements Initializable {
         Parent scene = loader.load();
 
         // Get the controller
-        CreateNewMealController controller = loader.getController();
+        NewMealController controller = loader.getController();
 
         // Pass the parent controller and the mealPlanModel
         controller.setParent(this); // Set the parent controller
