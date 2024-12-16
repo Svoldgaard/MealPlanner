@@ -4,44 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68016fb4-c13c-4da2-a261-900612e4ce36" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/BE/Ingredient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/BE/InventoryItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/BE/Meal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/BLL/AddMeals.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/BLL/MealManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/BLL/ShoppingListManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/BLL/util/SearchInventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/BLL/util/SearchMeal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/BLL/util/SearchShoppingList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/DAL/IngredientDAO_DB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/DAL/InventoryDAO_DB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/DAL/MealDAO_DB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/DAL/ShoppingListDAO_FILE.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/GUI/Controller/AddItemShoppinglistController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/GUI/Controller/CreateNewMealController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/GUI/Controller/InventoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/GUI/Controller/MealPlanController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/GUI/Model/MealPlanModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/MealPlanMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/AddItemShoppingList.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/CreateNewMeal.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/DatabaseFile/Meals" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/DatabaseFile/ShoppingList" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/MealPlan.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/NewItemInventory.fxml" afterDir="false" />
+    <list default="true" id="68016fb4-c13c-4da2-a261-900612e4ce36" name="Changes" comment="for now the program can search on meals add meals and edit and delete meals.">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/plans for the program/ToDo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/plans for the program/furture plan for the program" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/BLL/AddMeals.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/GUI/Controller/AddItemShoppinglistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/GUI/Controller/ShoppingListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/GUI/Controller/CreateNewMealController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/GUI/Controller/NewMealController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/GUI/Controller/MealPlanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/GUI/Controller/MealPlanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/AddItemShoppingList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/AddItemShoppingList.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/CreateNewMeal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/CreateNewMeal.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +30,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Svoldgaard"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Svoldgaard/MealPlanner.git",
+    "accountId": "9c3df1c5-9697-4be6-9974-a38bd9ae68b4"
+  }
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -137,8 +120,17 @@
       <workItem from="1734029864834" duration="2803000" />
       <workItem from="1734117187937" duration="3452000" />
       <workItem from="1734126502077" duration="3691000" />
-      <workItem from="1734204074107" duration="19725000" />
+      <workItem from="1734204074107" duration="20487000" />
     </task>
+    <task id="LOCAL-00001" summary="for now the program can search on meals add meals and edit and delete meals.">
+      <option name="closed" value="true" />
+      <created>1734390123788</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1734390123788</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,5 +146,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="for now the program can search on meals add meals and edit and delete meals." />
+    <option name="LAST_COMMIT_MESSAGE" value="for now the program can search on meals add meals and edit and delete meals." />
   </component>
 </project>
