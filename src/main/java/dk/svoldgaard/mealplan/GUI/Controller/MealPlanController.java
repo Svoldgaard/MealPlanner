@@ -1,5 +1,6 @@
 package dk.svoldgaard.mealplan.GUI.Controller;
 
+import dk.svoldgaard.mealplan.BE.InventoryItem;
 import dk.svoldgaard.mealplan.BE.Meal;
 import dk.svoldgaard.mealplan.GUI.Model.MealPlanModel;
 import javafx.application.Platform;
@@ -11,12 +12,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.*;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class MealPlanController implements Initializable {
@@ -52,13 +55,14 @@ public class MealPlanController implements Initializable {
 
 
     private MealPlanModel mealPlanModel;
+    private List<ListView<Meal>> weekdayMealLists;
 
     public MealPlanController() {
         try {
             mealPlanModel = new MealPlanModel();
         } catch (Exception e) {
             displayError(e);
-            mealPlanModel = null; // Continue with a null model if initialization fails.
+            mealPlanModel = null;
         }
     }
 
@@ -67,7 +71,7 @@ public class MealPlanController implements Initializable {
         if (mealPlanModel != null) {
             lstMeal.setItems(mealPlanModel.getObservableMeal());
         } else {
-            lstMeal.setItems(FXCollections.observableArrayList()); // Show an empty list.
+            lstMeal.setItems(FXCollections.observableArrayList());
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Initialization Warning");
             alert.setHeaderText("Meal Plan Model is unavailable.");
@@ -75,14 +79,24 @@ public class MealPlanController implements Initializable {
             alert.showAndWait();
         }
 
-        // this code make so the selected item is casted to the txtField
-        /*
-        lstMeal.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-           txtSearchMeal.setText(newValue.toString());
-        });
+        // Initialize the collection of weekday ListViews
+        weekdayMealLists = List.of(
+                lstMondayMeal,
+                lstTuesdayMeal,
+                lstWednesdayMeal,
+                lstThursdayMeal,
+                lstFridayMeal,
+                lstSaturdayMeal,
+                lstSundayMeal
+        );
 
-        */
+        // Set drag-and-drop handlers for all ListViews
+        setupDragAndDrop(lstMeal);
+        for (ListView<Meal> weekdayList : weekdayMealLists) {
+            setupDragAndDrop(weekdayList);
+        }
 
+        // search in the meal txt field
         txtSearchMeal.textProperty().addListener((observable, oldValue, newValue) -> {
             try{
                 mealPlanModel.searchMeal(newValue);
@@ -91,30 +105,25 @@ public class MealPlanController implements Initializable {
                 e.printStackTrace();
             }
         });
+
     }
+
 
     @FXML
     private void btnClose(ActionEvent actionEvent) {
+        btnClearMealPlan(actionEvent);
         ((Stage)(((Button)actionEvent.getSource()).getScene().getWindow())).close();
     }
 
     @FXML
     private void btnCreateNewMeal(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/dk/svoldgaard/mealplan/CreateNewMeal.fxml"));
-
-        // Load the FXML and create the new scene
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/dk/svoldgaard/mealplan/FXML/CreateNewMeal.fxml"));
         Parent scene = loader.load();
 
-        // Get the controller from the loader
         NewMealController controller = loader.getController();
-
-        // Set the MealPlanModel in the controller
-        controller.setMealPlanModel(mealPlanModel);  // Assuming 'mealPlanModel' is available
-
-        // Set the parent controller (this)
+        controller.setMealPlanModel(mealPlanModel);
         controller.setParent(this);
 
-        // Show the new window
         Stage stage = new Stage();
         stage.setScene(new Scene(scene));
         stage.setTitle("Create New Meal");
@@ -126,29 +135,27 @@ public class MealPlanController implements Initializable {
     private void btnEditMeal(ActionEvent actionEvent) throws IOException {
         Meal selectedMeal = lstMeal.getSelectionModel().getSelectedItem();
 
+        // alert if there is not selected a meal
         if (selectedMeal == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("No Meal Selected");
             alert.setHeaderText(null);
             alert.setContentText("Please select a meal to edit");
             alert.showAndWait();
-            return; // Exit the method if no meal is selected
+            return;
         }
 
         // Load the FXML for editing
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/dk/svoldgaard/mealplan/CreateNewMeal.fxml"));
+        loader.setLocation(getClass().getResource("/dk/svoldgaard/mealplan/FXML/CreateNewMeal.fxml"));
         Parent scene = loader.load();
 
-        // Get the controller
+
         NewMealController controller = loader.getController();
+        controller.setParent(this);
+        controller.setMealPlanModel(mealPlanModel);
+        controller.setMeal(selectedMeal);
 
-        // Pass the parent controller and the mealPlanModel
-        controller.setParent(this); // Set the parent controller
-        controller.setMealPlanModel(mealPlanModel); // Pass the MealPlanModel to the controller
-        controller.setMeal(selectedMeal); // Pass the selected meal for editing
-
-        // Show the stage
         Stage stage = new Stage();
         stage.setScene(new Scene(scene));
         stage.setTitle("Edit Meal");
@@ -160,7 +167,7 @@ public class MealPlanController implements Initializable {
     @FXML
     private void btnAddInventory(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/dk/svoldgaard/mealplan/NewItemInventory.fxml"));
+        loader.setLocation(getClass().getResource("/dk/svoldgaard/mealplan/FXML/NewItemInventory.fxml"));
         Parent scene = loader.load();
 
         Stage stage = new Stage();
@@ -174,7 +181,7 @@ public class MealPlanController implements Initializable {
     @FXML
     private void btnEditInventory(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/dk/svoldgaard/mealplan/NewItemInventory.fxml"));
+        loader.setLocation(getClass().getResource("/dk/svoldgaard/mealplan/FXML/NewItemInventory.fxml"));
         Parent scene = loader.load();
 
         Stage stage = new Stage();
@@ -188,7 +195,7 @@ public class MealPlanController implements Initializable {
     @FXML
     private void btnAddItem(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/dk/svoldgaard/mealplan/AddItemShoppingList.fxml"));
+        loader.setLocation(getClass().getResource("/dk/svoldgaard/mealplan/FXML/AddItemShoppingList.fxml"));
         Parent scene = loader.load();
 
         Stage stage = new Stage();
@@ -212,8 +219,8 @@ public class MealPlanController implements Initializable {
 
     @FXML
     private void btnDeleteItemInInventory(ActionEvent actionEvent) {
-        Object selectedItem = new Object() /* Logic to get the selected inventory item */;
-        delete(selectedItem, "inventoryItem", false);
+        //InventoryItem selectedInventory = InventoryTable.getSelectionModel().getSelectedItem();
+        //delete(selectedInventory, "inventoryItem", false);
     }
 
     private void delete(Object selectedItem, String itemType, boolean bypass) {
@@ -281,6 +288,11 @@ public class MealPlanController implements Initializable {
 
     @FXML
     private void btnClearMealPlan(ActionEvent actionEvent) {
+        for (ListView<Meal> weekdayList : weekdayMealLists) {
+            // Move all meals back to lstMeal
+            lstMeal.getItems().addAll(weekdayList.getItems());
+            weekdayList.getItems().clear(); // Clear the weekday ListView
+        }
     }
 
     public void refreshMealList() {
@@ -295,7 +307,87 @@ public class MealPlanController implements Initializable {
     }
 
 
+    public void dgdMeal(DragEvent dragEvent) {
+        Dragboard db = ((ListView<?>) dragEvent.getSource()).startDragAndDrop(TransferMode.MOVE);
+        ClipboardContent content = new ClipboardContent();
+        content.putString("Custom String"); // Example data
+        db.setContent(content);
+        dragEvent.consume();
+    }
+
+    public void dgdTuesday(DragEvent dragEvent) {
+        Dragboard db = dragEvent.getDragboard();
+        if (db.hasString()) {
+            System.out.println("Dropped: " + db.getString());
+        }
+        dragEvent.setDropCompleted(true);
+        dragEvent.consume();
+    }
 
 
+    // Set up drag-and-drop handlers for a ListView
+    private void setupDragAndDrop(ListView<Meal> listView) {
+        listView.setOnDragDetected(event -> startDrag(event, listView));
+        listView.setOnDragOver(event -> allowDragOver(event));
+        listView.setOnDragDropped(event -> handleDrop(event, listView));
+    }
 
+    // Start Drag from any ListView
+    private void startDrag(MouseEvent event, ListView<Meal> sourceList) {
+        Meal selectedMeal = sourceList.getSelectionModel().getSelectedItem();
+        if (selectedMeal != null) {
+            Dragboard dragboard = sourceList.startDragAndDrop(TransferMode.MOVE);
+            ClipboardContent content = new ClipboardContent();
+            content.putString(selectedMeal.getName()); // Add Meal name to Dragboard
+            dragboard.setContent(content);
+
+            // Attach the source ListView as part of the dragboard content
+            sourceList.getProperties().put("sourceList", sourceList);
+            event.consume();
+        }
+    }
+
+    // Allow Drag Over Target ListView
+    private void allowDragOver(DragEvent event) {
+        if (event.getGestureSource() != event.getGestureTarget() && event.getDragboard().hasString()) {
+            event.acceptTransferModes(TransferMode.MOVE);
+        }
+        event.consume();
+    }
+
+    // Handle Drop on Target ListView
+    private void handleDrop(DragEvent event, ListView<Meal> targetList) {
+        Dragboard dragboard = event.getDragboard();
+        boolean success = false;
+
+        if (dragboard.hasString()) {
+            // Get the source ListView from the dragboard properties
+            @SuppressWarnings("unchecked")
+            ListView<Meal> sourceList = (ListView<Meal>) event.getGestureSource();
+
+            // Find the dragged Meal by its name
+            String mealName = dragboard.getString();
+            Meal draggedMeal = findMealByName(sourceList, mealName);
+
+            if (draggedMeal != null) {
+                // Add to target ListView and remove from source ListView
+                targetList.getItems().add(draggedMeal);
+                sourceList.getItems().remove(draggedMeal);
+                success = true;
+            }
+        }
+
+        event.setDropCompleted(success);
+        event.consume();
+    }
+
+    // Helper Method: Find Meal Object by Name in a ListView
+    private Meal findMealByName(ListView<Meal> listView, String mealName) {
+        for (Meal meal : listView.getItems()) {
+            if (meal.getName().equals(mealName)) {
+                return meal;
+            }
+        }
+        return null; // If not found
+    }
 }

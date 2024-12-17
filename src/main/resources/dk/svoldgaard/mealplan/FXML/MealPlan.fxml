@@ -28,7 +28,7 @@
       </columns>
     </TableView>
     <Text layoutX="89.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory" />
-    <ListView fx:id="lstMeal" layoutX="230.0" layoutY="203.0" prefHeight="293.0" prefWidth="200.0" />
+    <ListView fx:id="lstMeal" layoutX="230.0" layoutY="203.0" onDragDropped="#dgdMeal" prefHeight="293.0" prefWidth="200.0" />
     <Text layoutX="306.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meal list" />
     <Button layoutX="566.0" layoutY="553.0" mnemonicParsing="false" onAction="#btnClearShoppingList" text="Clear shipping list" />
     <TableView fx:id="GroceryTable" layoutX="446.0" layoutY="203.0" prefHeight="293.0" prefWidth="300.0">
@@ -39,7 +39,7 @@
       </columns>
     </TableView>
     <ListView fx:id="lstMondayMeal" layoutX="22.0" layoutY="52.0" prefHeight="100.0" prefWidth="100.0" />
-    <ListView fx:id="lstTuesdayMeal" layoutX="124.0" layoutY="52.0" prefHeight="100.0" prefWidth="100.0" />
+    <ListView fx:id="lstTuesdayMeal" layoutX="124.0" layoutY="52.0" onDragDropped="#dgdTuesday" prefHeight="100.0" prefWidth="100.0" />
     <ListView fx:id="lstWednesdayMeal" layoutX="228.0" layoutY="52.0" prefHeight="100.0" prefWidth="100.0" />
     <ListView fx:id="lstThursdayMeal" layoutX="331.0" layoutY="52.0" prefHeight="100.0" prefWidth="100.0" />
     <ListView fx:id="lstFridayMeal" layoutX="434.0" layoutY="52.0" prefHeight="100.0" prefWidth="100.0" />
