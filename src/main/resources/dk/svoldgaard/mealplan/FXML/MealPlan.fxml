@@ -21,7 +21,7 @@
     <Text layoutX="659.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sunday" AnchorPane.bottomAnchor="553.0" AnchorPane.leftAnchor="659.0" AnchorPane.rightAnchor="59.54345703125" AnchorPane.topAnchor="35.0" />
     <Button layoutX="690.0" layoutY="553.0" mnemonicParsing="false" onAction="#btnClose" text="Close" />
     <Button layoutX="438.0" layoutY="553.0" mnemonicParsing="false" onAction="#btnCreateShoppingList" text="Create shopping list" />
-    <TableView fx:id="InventoryTable" layoutX="14.0" layoutY="203.0" prefHeight="293.0" prefWidth="200.0">
+    <TableView fx:id="inventoryTable" layoutX="14.0" layoutY="203.0" prefHeight="293.0" prefWidth="200.0">
       <columns>
           <TableColumn prefWidth="125.0" text="Item" />
           <TableColumn prefWidth="75.0" text="Qty" />
@@ -31,7 +31,7 @@
     <ListView fx:id="lstMeal" layoutX="230.0" layoutY="203.0" onDragDropped="#dgdMeal" prefHeight="293.0" prefWidth="200.0" />
     <Text layoutX="306.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meal list" />
     <Button layoutX="566.0" layoutY="553.0" mnemonicParsing="false" onAction="#btnClearShoppingList" text="Clear shipping list" />
-    <TableView fx:id="GroceryTable" layoutX="446.0" layoutY="203.0" prefHeight="293.0" prefWidth="300.0">
+    <TableView fx:id="groceryTable" layoutX="446.0" layoutY="203.0" prefHeight="293.0" prefWidth="300.0">
       <columns>
           <TableColumn prefWidth="150.0" text="Item" />
           <TableColumn prefWidth="75.0" text="Qty" />

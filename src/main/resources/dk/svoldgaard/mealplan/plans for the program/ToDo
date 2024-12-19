@@ -1,12 +1,9 @@
 
-
-1) get the list for each day to work
-2) get the drag and drop to work with the meals
-3) get the meals to hold the ingredient needed for the meal
-4) make so if the meal is chosen to a weekday the ingredient is also added to the shoppingList
-5) make so the inventory works
-6) make so the shoppinglist remove item both places if the item is all ready in inventory and also needed for the meal.
-7) make the other 2 search bars work
-8) make the GUI look nicer with CSS
-9) ......
+1) get the meals to hold the ingredient needed for the meal
+2) make so if the meal is chosen to a weekday the ingredient is also added to the shoppingList
+3) make so the inventory works
+4) make so the shoppinglist remove item both places if the item is all ready in inventory and also needed for the meal.
+5) make the other 2 search bars work
+6) make the GUI look nicer with CSS
+7) ......
 

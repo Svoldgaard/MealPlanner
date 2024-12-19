@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68016fb4-c13c-4da2-a261-900612e4ce36" name="Changes" comment="added a todo and changed some names on classes so it is more fitting">
+    <list default="true" id="68016fb4-c13c-4da2-a261-900612e4ce36" name="Changes" comment="drag and drop function work for moving meal to weekdays and when closing the program they return to the meal list so they are not deleted (maybe there is a better way around it not found yet)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/GUI/Model/ShoppingListModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/BE/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/BE/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/BLL/ShoppingListManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/BLL/ShoppingListManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/DAL/ShoppingListDAO_FILE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/DAL/ShoppingListDAO_FILE.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/GUI/Controller/MealPlanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/GUI/Controller/MealPlanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/MealPlanMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/MealPlanMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/AddItemShoppingList.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/FXML/AddItemShoppingList.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/CreateNewMeal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/FXML/CreateNewMeal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/MealPlan.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/FXML/MealPlan.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/NewItemInventory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/FXML/NewItemInventory.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/GUI/Controller/ShoppingListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/GUI/Controller/ShoppingListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/GUI/Model/MealPlanModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/svoldgaard/mealplan/GUI/Model/MealPlanModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/FXML/MealPlan.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/FXML/MealPlan.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/plans for the program/ToDo" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dk/svoldgaard/mealplan/plans for the program/ToDo" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +125,7 @@
       <workItem from="1734029864834" duration="2803000" />
       <workItem from="1734117187937" duration="3452000" />
       <workItem from="1734126502077" duration="3691000" />
-      <workItem from="1734204074107" duration="22528000" />
+      <workItem from="1734204074107" duration="27539000" />
     </task>
     <task id="LOCAL-00001" summary="for now the program can search on meals add meals and edit and delete meals.">
       <option name="closed" value="true" />
@@ -148,7 +151,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734390773952</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="drag and drop function work for moving meal to weekdays and when closing the program they return to the meal list so they are not deleted (maybe there is a better way around it not found yet)">
+      <option name="closed" value="true" />
+      <created>1734471203239</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1734471203239</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,6 +179,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="for now the program can search on meals add meals and edit and delete meals." />
     <MESSAGE value="added a todo and changed some names on classes so it is more fitting" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a todo and changed some names on classes so it is more fitting" />
+    <MESSAGE value="drag and drop function work for moving meal to weekdays and when closing the program they return to the meal list so they are not deleted (maybe there is a better way around it not found yet)" />
+    <option name="LAST_COMMIT_MESSAGE" value="drag and drop function work for moving meal to weekdays and when closing the program they return to the meal list so they are not deleted (maybe there is a better way around it not found yet)" />
   </component>
 </project>

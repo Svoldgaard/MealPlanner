@@ -19,6 +19,7 @@ public class MealPlanModel {
     private final ObservableList<Meal> lstSaturdayMeal;
     private final ObservableList<Meal> lstSundayMeal;
 
+
     private final MealManager mealManager;
 
     public MealPlanModel() {

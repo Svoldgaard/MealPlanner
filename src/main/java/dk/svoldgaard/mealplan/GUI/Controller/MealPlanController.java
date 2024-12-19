@@ -1,5 +1,6 @@
 package dk.svoldgaard.mealplan.GUI.Controller;
 
+import dk.svoldgaard.mealplan.BE.Ingredient;
 import dk.svoldgaard.mealplan.BE.InventoryItem;
 import dk.svoldgaard.mealplan.BE.Meal;
 import dk.svoldgaard.mealplan.GUI.Model.MealPlanModel;
@@ -33,11 +34,11 @@ public class MealPlanController implements Initializable {
     @FXML
     private Text txtTotalPrice;
     @FXML
-    private TableView InventoryTable;
+    private TableView inventoryTable;
     @FXML
     private ListView<Meal> lstMeal;
     @FXML
-    private TableView GroceryTable;
+    private TableView<Ingredient> groceryTable;
     @FXML
     private ListView lstMondayMeal;
     @FXML
@@ -296,7 +297,8 @@ public class MealPlanController implements Initializable {
     }
 
     public void refreshMealList() {
-        lstMeal.setItems(mealPlanModel.getObservableMeal());  // Update ListView with new data
+        lstMeal.setItems(mealPlanModel.getObservableMeal());
+
     }
 
     private void displayError(Exception e) {
